@@ -1,0 +1,40 @@
+language: php
+
+sudo: false
+
+install: composer install --dev
+
+php:
+  - 5.6
+  - 5.5
+  - 5.4
+  - hhvm
+  - hhvm-nightly
+
+env:
+  - TARGET=unit-tests
+  - TARGET=integration-tests
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
+    - php: hhvm-nightly
+    - env: TARGET=integration-tests
+
+before_script:
+  - echo 'date.timezone = "Europe/Berlin"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
+script:
+  - make $TARGET
+
+notifications:
+  email:
+    - jerome@gamez.name
+  irc:
+    - "irc.freenode.net#knightingale"

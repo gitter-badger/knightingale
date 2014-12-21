@@ -1,0 +1,50 @@
+{
+    "name": "knightingale/knightingale",
+    "type": "library",
+    "description": "Knightingale is a library that provides a unified interface to various music services.",
+    "keywords": ["music", "aggregation", "interface", "knightingale", "hypem"],
+    "homepage": "http://knightingale.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Gamez",
+            "email": "jerome@gamez.name",
+            "homepage": "http://www.gamez.name"
+        }
+    ],
+    "support": {
+        "email": "info@knightingale.io",
+        "issues": "https://github.com/knightingale-io/knightingale/issues",
+        "wiki": "https://github.com/knightingale-io/knightingale/wiki",
+        "irc": "irc://irc.freenode.org/knightingale",
+        "source": "https://github.com/knightingale-io/knightingale/tree/master"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "doctrine/collections": "~1.2",
+        "egeloen/http-adapter": "~0.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4",
+        "phpdocumentor/phpdocumentor": "~2.8",
+        "phpspec/prophecy": "~1.3",
+        "phpunit/php-code-coverage": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Knightingale\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Knightingale\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
