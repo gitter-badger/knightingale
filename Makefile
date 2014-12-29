@@ -22,6 +22,12 @@ coverage:
 coverage-unit:
 	./vendor/bin/phpunit --exclude-group="integration-tests" --coverage-html build/coverage
 
+travis-unit-tests:
+	./vendor/bin/phpunit --exclude-group="integration-tests" --coverage-clover build/coverage-unit-tests.clover
+
+travis-integration-tests:
+	./vendor/bin/phpunit --group="integration-tests" --coverage-clover build/coverage-integration-tests.clover
+
 view-coverage: coverage
 	open build/coverage/index.html
 
