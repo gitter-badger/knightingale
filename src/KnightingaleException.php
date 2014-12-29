@@ -9,6 +9,7 @@
 namespace Knightingale;
 
 use Knightingale\Provider\ProviderInterface;
+use Knightingale\User\UserAwareInterface;
 
 /**
  * Exceptions for Knightingale
@@ -108,7 +109,7 @@ class KnightingaleException extends \Exception
     /**
      * Creates an exception for when a user object is required, but not present.
      *
-     * @param object $class
+     * @param UserAwareInterface $class
      *
      * @return KnightingaleException
      */

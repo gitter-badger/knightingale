@@ -26,6 +26,8 @@ interface UserAwareInterface
      * Sets the user.
      *
      * @param UserInterface $user The user.
+     *
+     * @return void
      */
     public function setUser(UserInterface $user);
 
@@ -35,6 +37,8 @@ interface UserAwareInterface
      * @param UserInterface $user
      *
      * @throws \Knightingale\KnightingaleException When there is a problem with the user.
+     *
+     * @return void
      */
     public function checkUser(UserInterface $user);
 }
