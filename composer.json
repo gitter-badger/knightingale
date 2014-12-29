@@ -28,9 +28,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.4",
-        "phpdocumentor/phpdocumentor": "~2.8",
-        "phpspec/prophecy": "~1.3",
-        "phpunit/php-code-coverage": "~2.0"
+        "phpspec/prophecy": "~1.3"
     },
     "autoload": {
         "psr-4": {
