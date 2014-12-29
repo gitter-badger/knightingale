@@ -8,8 +8,6 @@ php:
   - 5.6
   - 5.5
   - 5.4
-  - hhvm
-  - hhvm-nightly
 
 env:
   - TARGET=unit-tests
@@ -23,8 +21,6 @@ cache:
 matrix:
   fast_finish: true
   allow_failures:
-    - php: hhvm
-    - php: hhvm-nightly
     - env: TARGET=integration-tests
 
 before_script:
