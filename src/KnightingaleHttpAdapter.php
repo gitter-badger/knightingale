@@ -40,15 +40,13 @@ class KnightingaleHttpAdapter extends CurlHttpAdapter
 
     /**
      * Overrides the user agent
-     *
-     * @TODO Use dynamic version
      */
     public function overrideUserAgent()
     {
         $configuration = $this->getConfiguration();
 
         $userAgent = sprintf('%s', $configuration->getUserAgent());
-        $userAgent = sprintf('Knightingale/%s (%s)', '1.0', $userAgent);
+        $userAgent = sprintf('Knightingale/%s', $userAgent);
 
         $configuration->setUserAgent($userAgent);
         $this->setConfiguration($configuration);

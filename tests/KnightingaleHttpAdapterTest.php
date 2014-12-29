@@ -19,8 +19,7 @@ class KnightingaleHttpAdapterTest extends \PHPUnit_Framework_TestCase
 
         $config = $http->getConfiguration();
 
-        $regex = '@^Knightingale/([0-9]\.[0-9](\.[0-9])?(\-.+)?)\s@';
-        $this->assertRegExp($regex, $config->getUserAgent());
+        $this->assertEquals('Knightingale/Ivory Http Adapter', $config->getUserAgent());
     }
 
     public function testGetName()
