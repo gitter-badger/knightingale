@@ -30,8 +30,7 @@ script:
   - make travis-${TARGET}
 
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover build/coverage-${TARGET}.clover
+  - if [ "$TRAVIS_PHP_VERSION" = "5.6" ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover build/coverage-${TARGET}.clover; fi;
 
 notifications:
   email:
