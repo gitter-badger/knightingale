@@ -29,9 +29,7 @@ class DummyUserProvider implements ProviderInterface, UserAwareInterface
     }
 
     /**
-     * Returns the string representation of this provider.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString()
     {

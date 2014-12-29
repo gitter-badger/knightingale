@@ -58,7 +58,7 @@ trait UserPlaylistProviderTrait
      *
      * @see UserPlaylistProviderInterface::getUserPlaylists()
      *
-     * @return \array<string,callback>
+     * @return callback[]
      */
     abstract public function getUserPlaylists();
 }
