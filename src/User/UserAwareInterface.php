@@ -30,15 +30,4 @@ interface UserAwareInterface
      * @return void
      */
     public function setUser(UserInterface $user);
-
-    /**
-     * Performs checks, e.g. if the specified user actually exists in the provided service.
-     *
-     * @param UserInterface $user
-     *
-     * @throws \Knightingale\KnightingaleException When there is a problem with the user.
-     *
-     * @return void
-     */
-    public function checkUser(UserInterface $user);
 }

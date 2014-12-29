@@ -64,15 +64,4 @@ trait UserAwareTrait
     {
         $this->user = $user;
     }
-
-    /**
-     * Performs checks, e.g. if the specified user actually exists in the provided service.
-     *
-     * @see UserAwareInterface::checkUser()
-     *
-     * @param UserInterface $user
-     *
-     * @throws KnightingaleException When there is a problem with the user.
-     */
-    public function checkUser(UserInterface $user) {}
 }
