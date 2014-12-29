@@ -37,7 +37,7 @@ interface UserPlaylistProviderInterface extends ProviderInterface, UserAwareInte
     /**
      * Returns an array of available user playlists.
      *
-     * @return callback[]
+     * @return array
      */
     public function getUserPlaylists();
 }

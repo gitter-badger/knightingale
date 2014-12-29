@@ -54,7 +54,7 @@ trait PlaylistProviderTrait
      *
      * @see PlaylistProviderInterface::getPlaylists()
      *
-     * @return callback[]
+     * @return array
      */
     abstract function getPlaylists();
 }

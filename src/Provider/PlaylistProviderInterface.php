@@ -36,7 +36,7 @@ interface PlaylistProviderInterface extends ProviderInterface
     /**
      * Returns an array of available playlists.
      *
-     * @return callback[]
+     * @return array
      */
     public function getPlaylists();
 }
