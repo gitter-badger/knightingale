@@ -28,9 +28,9 @@ abstract class EntityCollection extends ArrayCollection implements EntityCollect
     protected function assertClass($entity)
     {
         $parents = array_merge([get_class($entity)], class_parents($entity));
-        $expected = $this->getEntityClassName($entity);
+        $expected = $this->getEntityClassName();
 
-        if (!in_array($this->getEntityClassName($entity), $parents, true)) {
+        if (!in_array($expected, $parents, true)) {
             throw KnightingaleException::entityMustInheritFromClass($entity, $expected);
         }
     }
@@ -50,7 +50,7 @@ abstract class EntityCollection extends ArrayCollection implements EntityCollect
      */
     public function add($value)
     {
-        $this->getEntityClassName($value);
+        $this->assertClass($value);
 
         return parent::add($value);
     }
