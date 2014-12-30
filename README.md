@@ -26,15 +26,13 @@ composer require knightingale/knightingale
 ##### Anonymous access
 
 ```php
-use Knightingale\KnightingaleKernel;
+use Knightingale\Provider\Hypem\HypemProvider;
 
-$knightingale = new KnightingaleKernel();
-/** @var \Knightingale\Provider\Hypem\HypemProvider $hypem */
-$hypem = $knightingale->getProvider('hypem');
-$playlist = $hypem->getPlaylist('popular');
-$trackCollection = $playlist->getTracks();
+$hypem = new HypemProvider();
+$playlists = $hypem->getAvailablePlaylists(); // ['latest', 'popular']
+$latest = $hypem->getPlaylist('latest');
 
-foreach ($trackCollection as $track) {
+foreach ($latest->getTracks() as $track) {
     printf(
         "%s by %s (Added: %s)\n",
         $track->getName(),
@@ -48,23 +46,19 @@ foreach ($trackCollection as $track) {
 
 ```php
 use Knightingale\User\User;
-use Knightingale\KnightingaleKernel;
+use Knightingale\Provider\Hypem\HypemProvider;
 
-// Configuration
 $user = new User([
     'hypem' => 'foudufafa'
 ]);
 
-$knightingale = new KnightingaleKernel();
-$knightingale->setUser($user);
+$hypem = new HypemProvider();
+$hypem->setUser($user);
 
-// Usage
-/** @var \Knightingale\Provider\Hypem\HypemProvider $hypem */
-$hypem = $knightingale->getProvider('hypem');
-$playlist = $hypem->getUserPlaylist('starred');
-$trackCollection = $playlist->getTracks();
+$playlists = $hypem->getAvailableUserPlaylists(); // ['starred']
+$starred = $hypem->getUserPlaylist('starred');
 
-foreach ($trackCollection as $track) {
+foreach ($starred->getTracks() as $track) {
     printf(
         "%s by %s (Added: %s)\n",
         $track->getName(),
@@ -72,3 +66,5 @@ foreach ($trackCollection as $track) {
         $track->getAddedAt()->format('d.m.Y')
     );
 }
+```
+
